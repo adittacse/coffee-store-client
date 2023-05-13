@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const AddCoffee = () => {
     const handleAddCoffee = (event) => {
@@ -14,7 +15,26 @@ const AddCoffee = () => {
         
         const newCoffee = {name, quantity, supplier, taste, category, details, photo};
         
-        
+        // send data to the server
+        fetch("http://localhost:3000/coffee", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newCoffee)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    // alert("Coffee added successfully!");
+                    Swal.fire({
+                        title: "Success!",
+                        text: 'Coffee added successfully!',
+                        icon: "success",
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
     }
     
     return (

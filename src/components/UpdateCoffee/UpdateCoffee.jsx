@@ -29,7 +29,7 @@ const UpdateCoffee = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: "Success!",
                         text: 'Coffee updated successfully!',

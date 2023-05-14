@@ -45,7 +45,7 @@ const CoffeeCard = ({coffee}) => {
                     <p>Taste: {taste}</p>
                     <p>Category: {category}</p>
                 </div>
-                <div className="card-actions justify-end items-center">
+                <div className="card-actions justify-end items-centern">
                     <div className="btn-group btn-group-vertical space-y-3">
                         <button className="btn">View</button>
                         <Link to={`/updateCoffee/${_id}`}>

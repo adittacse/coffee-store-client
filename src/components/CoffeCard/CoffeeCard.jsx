@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import {Link} from "react-router-dom";
 
 const CoffeeCard = ({coffee, coffees, setCoffees}) => {
-    const {_id, name, quantity, supplier, taste, category, details, photo} = coffee;
+    const {_id, name, quantity, supplier, taste, category, photo} = coffee;
     
     const handleDelete = (_id) => {
         Swal.fire({
@@ -21,7 +21,6 @@ const CoffeeCard = ({coffee, coffees, setCoffees}) => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
                         if(data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',

@@ -16,7 +16,7 @@ const CoffeeCard = ({coffee}) => {
                 </div>
                 <div className="card-actions justify-end items-center">
                     <div className="btn-group btn-group-vertical space-y-3">
-                        <button className="btn btn-active">View</button>
+                        <button className="btn">View</button>
                         <button className="btn">Edit</button>
                         <button className="btn">Delete</button>
                     </div>
